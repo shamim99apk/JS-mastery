@@ -1,0 +1,12 @@
+// Given two promises promise1 and promise2, return a new promise. promise1 and promise2 will both resolve with a number. The returned promise should resolve with the sum of the two numbers
+
+var addTwoPromises = async function (promise1, promise2) {
+  const result =  Promise.all([promise1, promise2]).then(
+    (values) => values[0] + values[1]
+  );
+   return result
+};
+
+addTwoPromises(Promise.resolve(2), Promise.resolve(3)).then((item) =>
+  console.log(item)
+);
