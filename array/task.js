@@ -84,3 +84,23 @@ for (let i = 0; i < reSizeArray.length; i++) {
   }
 }
 // console.log(reSizeArray);
+
+//  T-012: Create an Array of 10 elements. Use the splice() method to empty the array.
+const spliceArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+spliceArray.splice(0, 10);
+// console.log(spliceArray);
+
+//T-013: Create an Array of 10 elements. You can empty the array in multiple ways: using the length property, using the pop() method, using the shift() method, setting the array with [], or the splice() method. Which among these methods are most efficient and why?
+
+// -- Most efficient: arr.length = 0 → in-place, O(1), preserves references
+// -- Good alternative: splice(0, arr.length) → in-place, safe if references matter
+// -- Avoid: shift() in loops → slow, O(n²)
+
+// T-014: What happens when you concatenate two empty arrays?
+const concatenateArray1 = [];
+const concatenateArray2 = [];
+
+const resss = concatenateArray1.concat(concatenateArray2);
+console.log(resss);
+// Concatenating two empty arrays gives a new empty array [].
