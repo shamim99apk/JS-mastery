@@ -104,3 +104,48 @@ const concatenateArray2 = [];
 const resss = concatenateArray1.concat(concatenateArray2);
 console.log(resss);
 // Concatenating two empty arrays gives a new empty array [].
+
+//T-015: How can you check if a value is partially matching with any of the elements of an Array?
+
+let randomNum = 55;
+const checkMatchingArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const check = checkMatchingArray.includes(randomNum);
+// console.log(check);
+
+// Consider these input arrays for question T-21 to T-48
+
+const employees = [
+  { id: 1, name: "Alice", departmentId: 1, salary: 5000 },
+  { id: 2, name: "Bob", departmentId: 2, salary: 7000 },
+  { id: 3, name: "Charlie", departmentId: 3, salary: 4500 },
+  { id: 4, name: "Diana", departmentId: 1, salary: 5500 },
+  { id: 5, name: "Edward", departmentId: 2, salary: 8000 },
+  { id: 6, name: "Fiona", departmentId: 4, salary: 6000 },
+  { id: 7, name: "George", departmentId: 3, salary: 5200 },
+  { id: 8, name: "Helen", departmentId: 4, salary: 7200 },
+  { id: 9, name: "Ian", departmentId: 2, salary: 4800 },
+  { id: 10, name: "Jane", departmentId: 1, salary: 5100 },
+];
+
+const departments = [
+  { id: 1, name: "HR" },
+  { id: 2, name: "Engineering" },
+  { id: 3, name: "Marketing" },
+  { id: 4, name: "Sales" },
+];
+const findEngineeringDepartments = departments.find(
+  (x) => x.name === "Engineering",
+);
+const EngineeringEmployees = employees.filter(
+  (x) => x.departmentId === findEngineeringDepartments.id,
+);
+
+//T-022: Create a new array that combines employee names and department names in the format: "Alice (HR)".
+
+const highestSalary = employees.reduce((max, emp) => {
+  return emp.salary > max ? emp.salary : max;
+}, 0);
+
+console.log(highestSalary);
+
